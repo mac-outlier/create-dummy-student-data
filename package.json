@@ -1,0 +1,23 @@
+{
+  "name": "create-dummy-student-data",
+  "version": "1.0.0",
+  "description": "Script to create dummy data in a database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mac-outlier/create-dummy-student-data.git"
+  },
+  "author": "Matt Curtis <mattc@outlier.org>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mac-outlier/create-dummy-student-data/issues"
+  },
+  "homepage": "https://github.com/mac-outlier/create-dummy-student-data#readme",
+  "dependencies": {
+    "faker": "^5.5.3",
+    "sqlite3": "^5.0.2"
+  }
+}

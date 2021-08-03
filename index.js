@@ -13,6 +13,7 @@
       last_name TEXT,
       email TEXT,
       is_registered INTEGER,
+      is_approved INTEGER,
       password_hash TEXT,
       address TEXT,
       city TEXT,
@@ -24,7 +25,7 @@
       ip_address TEXT
     );`)
 
-  const stmt = await db.prepare('INSERT INTO students VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)')
+  const stmt = await db.prepare('INSERT INTO students VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)')
 
   for (let i = 0; i < RECORD_COUNT; i++) {
 
@@ -38,6 +39,7 @@
       lastName,
       faker.internet.email(firstName, lastName),
       faker.datatype.boolean() ? 1 : 0,
+      faker.datatype.boolean() ? 1 : 0,
       faker.git.commitSha(),
       faker.address.streetAddress(true),
       faker.address.cityName(),
@@ -50,7 +52,7 @@
     )
   }
 
-  stmt.finalize()
+  await stmt.finalize()
 
   db.close()
 

@@ -19,7 +19,7 @@
   const gradeDataFile = fs.createWriteStream('./dist/grades.json')
 
   await db.schema.dropTableIfExists('students')
-  const table = await db.schema.createTable('students', table => {
+  await db.schema.createTable('students', table => {
     table.increments('id')
     table.string('first_name')
     table.string('last_name')

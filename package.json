@@ -18,6 +18,6 @@
   "homepage": "https://github.com/mac-outlier/create-dummy-student-data#readme",
   "dependencies": {
     "faker": "^5.5.3",
-    "sqlite3": "^5.0.2"
+    "knex": "^0.21.21"
   }
 }

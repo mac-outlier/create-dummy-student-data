@@ -6,7 +6,7 @@
   const fs = require('fs')
   const faker = require('faker')
 
-  const RECORD_COUNT = 10000
+  const RECORD_COUNT = parseInt(process.argv[2]) || 10
   const COURSES = ['Calculus', 'Philosophy', 'Microeconomics', 'Astronomy', 'Statistics']
 
   const db = require('knex')({
@@ -77,6 +77,7 @@
   await gradeDataFile.write('\n]')
   gradeDataFile.close()
   db.destroy()
+  console.info(`Created ${RECORD_COUNT} student records.`)
 })()
 
 function getRandomElementsFromArray(arr) {
